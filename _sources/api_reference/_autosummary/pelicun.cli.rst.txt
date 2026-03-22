@@ -1,0 +1,31 @@
+pelicun.cli
+===========
+
+.. automodule:: pelicun.cli
+   :members:
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      main
+      setup_dlml_logging
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+

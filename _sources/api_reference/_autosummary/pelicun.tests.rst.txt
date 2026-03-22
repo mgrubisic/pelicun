@@ -1,0 +1,40 @@
+pelicun.tests
+=============
+
+.. automodule:: pelicun.tests
+   :members:
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+
+.. rubric:: Modules
+
+.. autosummary::
+   :toctree:
+   :template: custom-module-template.rst
+   :recursive:
+
+   basic
+   code_repetition_checker
+   conftest
+   dl_calculation
+   maintenance
+   tools
+   util
+   validation
+

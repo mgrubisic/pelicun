@@ -1,0 +1,491 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>pelicun.tests.conftest &mdash; pelicun  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=f9bf6728" />
+
+  
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script src="../../../_static/hide_empty_pre.js?v=a807066b"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #F2F2F2" >
+
+          
+          
+          <a href="../../../index.html">
+            
+              <img src="../../../_static/pelicun-Logo-grey.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/license.html">1. Copyright and license</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/cite.html">2. Citing pelicun</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/cite.html#logo">3. Logo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/acknowledgments.html">4. Acknowledgments</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../about/acknowledgments.html#national-science-foundation">4.1. National Science Foundation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../about/acknowledgments.html#contributors">4.2. Contributors</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../release_notes/index.html">5. Release Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../release_notes/index.html#version-3-0">5.1. Version 3.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../release_notes/index.html#version-2-0">5.2. Version 2.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../release_notes/index.html#version-1-0">5.3. Version 1.0</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_guide/install.html">1. Getting started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../user_guide/install.html#staying-up-to-date">1.1. Staying up to date</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_guide/pelicun_framework.html">2. The Pelicun Framework</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../user_guide/pelicun_framework.html#abbreviations">2.1. Abbreviations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../user_guide/pelicun_framework.html#introduction-to-pelicun">2.2. Introduction to Pelicun</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../user_guide/pelicun_framework.html#overview">2.3. Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../user_guide/pelicun_framework.html#performance-assessment-workflow">2.4. Performance Assessment Workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../user_guide/pelicun_framework.html#response-model">2.5. Response Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../user_guide/pelicun_framework.html#performance-model">2.6. Performance Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../user_guide/pelicun_framework.html#damage-model">2.7. Damage Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../user_guide/pelicun_framework.html#loss-model">2.8. Loss Model</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_guide/feature_overview.html">3. Overview of pelicun features</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../user_guide/feature_overview.html#saving-loading-samples">3.1. Saving/loading samples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../user_guide/feature_overview.html#logging-support">3.2. Logging support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../user_guide/feature_overview.html#uncertainty-quantification">3.3. Uncertainty quantification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../user_guide/feature_overview.html#assessment-types">3.4. Assessment types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../user_guide/feature_overview.html#demand-simulation">3.5. Demand simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../user_guide/feature_overview.html#damage-estimation">3.6. Damage estimation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../user_guide/feature_overview.html#loss-estimation">3.7. Loss estimation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../user_guide/feature_overview.html#command-line-support">3.8. Command-line support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../user_guide/feature_overview.html#standalone-tools">3.9. Standalone tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../user_guide/feature_overview.html#feature-overview-and-examples">3.10. Feature overview and examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_guide/damage_and_loss_library.html">4. Damage and loss library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_guide/bug_reports_and_feature_requests.html">5. Bug reports and feature requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_guide/resources_for_new_python_users.html">6. Resources for new python users</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/index.html">7. Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/notebooks/example_1.html">7.1. Example 1: Simple loss function.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/notebooks/example_2.html">7.2. Example 2: Damage state validation.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/notebooks/example_3.html">7.3. Example 3: Combining fragility-based damage consequences and loss functions.</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api_reference/index.html">8. API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../api_reference/_autosummary/pelicun.html">8.1. pelicun</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer_guide/getting_started.html">1. Getting started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../developer_guide/getting_started.html#code-of-conduct">1.1. Code of conduct</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../developer_guide/getting_started.html#how-to-contribute">1.2. How to contribute</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer_guide/development_environment.html">2. Setting up a development environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer_guide/code_quality.html">3. Coding practice</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../developer_guide/code_quality.html#code-quality-assurance">3.1. Code quality assurance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../developer_guide/code_quality.html#unit-tests">3.2. Unit tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../developer_guide/code_quality.html#documentation">3.3. Documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer_guide/internals.html">4. Package architecture</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../developer_guide/internals.html#overview-of-files">4.1. Overview of files</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #F2F2F2" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">pelicun</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">pelicun.tests.conftest</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for pelicun.tests.conftest</h1><div class="highlight"><pre>
+<span></span><span class="c1">#</span>
+<span class="c1"># Copyright (c) 2018 Leland Stanford Junior University</span>
+<span class="c1"># Copyright (c) 2018 The Regents of the University of California</span>
+<span class="c1">#</span>
+<span class="c1"># This file is part of pelicun.</span>
+<span class="c1">#</span>
+<span class="c1"># Redistribution and use in source and binary forms, with or without</span>
+<span class="c1"># modification, are permitted provided that the following conditions are met:</span>
+<span class="c1">#</span>
+<span class="c1"># 1. Redistributions of source code must retain the above copyright notice,</span>
+<span class="c1"># this list of conditions and the following disclaimer.</span>
+<span class="c1">#</span>
+<span class="c1"># 2. Redistributions in binary form must reproduce the above copyright notice,</span>
+<span class="c1"># this list of conditions and the following disclaimer in the documentation</span>
+<span class="c1"># and/or other materials provided with the distribution.</span>
+<span class="c1">#</span>
+<span class="c1"># 3. Neither the name of the copyright holder nor the names of its contributors</span>
+<span class="c1"># may be used to endorse or promote products derived from this software without</span>
+<span class="c1"># specific prior written permission.</span>
+<span class="c1">#</span>
+<span class="c1"># THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS IS&quot;</span>
+<span class="c1"># AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE</span>
+<span class="c1"># IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE</span>
+<span class="c1"># ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE</span>
+<span class="c1"># LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR</span>
+<span class="c1"># CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF</span>
+<span class="c1"># SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS</span>
+<span class="c1"># INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN</span>
+<span class="c1"># CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)</span>
+<span class="c1"># ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE</span>
+<span class="c1"># POSSIBILITY OF SUCH DAMAGE.</span>
+<span class="c1">#</span>
+<span class="c1"># You should have received a copy of the BSD 3-Clause License along with</span>
+<span class="c1"># pelicun. If not, see &lt;http://www.opensource.org/licenses/&gt;.</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">shutil</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">tempfile</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Generator</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">unittest.mock</span><span class="w"> </span><span class="kn">import</span> <span class="n">patch</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pytest</span>
+
+<span class="c1"># This is an explicit list of tests that handle their own network mocking</span>
+<span class="c1"># and should be excluded from the global fixture.</span>
+<span class="n">EXCLUDED_TESTS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;test_check_dlml_data_with_missing_data&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;test_check_dlml_data_with_existing_data_update_available&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;test_check_dlml_data_download_failure&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;test_check_dlml_data_permission_error&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;test_check_dlml_data_version_check_failure&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;test_logging_configuration&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;test_warning_system_integration&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+
+
+<div class="viewcode-block" id="mock_dlml_data_check">
+<a class="viewcode-back" href="../../../api_reference/_autosummary/pelicun.tests.conftest.html#pelicun.tests.conftest.mock_dlml_data_check">[docs]</a>
+<span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span><span class="p">(</span><span class="n">autouse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">mock_dlml_data_check</span><span class="p">(</span>
+    <span class="n">request</span><span class="p">:</span> <span class="n">pytest</span><span class="o">.</span><span class="n">FixtureRequest</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Generator</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Mocks the DLML data check for the entire test session, UNLESS</span>
+<span class="sd">    the test is in the specific exclusion list.</span>
+
+<span class="sd">    This provides a high-performance, fail-safe &quot;no network&quot; policy</span>
+<span class="sd">    while allowing specific integration tests to run their own logic.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># If the current test&#39;s name is in our exclusion list, do not</span>
+    <span class="c1"># apply the global mock.</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">node</span><span class="o">.</span><span class="n">name</span> <span class="ow">in</span> <span class="n">EXCLUDED_TESTS</span><span class="p">:</span>
+        <span class="k">yield</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># For all other tests, apply the global mock.</span>
+        <span class="n">target_function_path</span> <span class="o">=</span> <span class="s1">&#39;pelicun.tools.dlml.check_dlml_data&#39;</span>
+        <span class="k">with</span> <span class="n">patch</span><span class="p">(</span><span class="n">target_function_path</span><span class="p">)</span> <span class="k">as</span> <span class="n">mocked_check_func</span><span class="p">:</span>
+            <span class="n">mocked_check_func</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="k">yield</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_setup_common_test_data</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">Path</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Create a temporary directory with common test data for regional simulations.</span>
+
+<span class="sd">    This helper function sets up common test data used by multiple test fixtures:</span>
+<span class="sd">    1. Creates a temporary directory</span>
+<span class="sd">    2. Creates the test_event_grid.csv with 2 grid points</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Path object to the temporary directory</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Create a temporary directory</span>
+    <span class="n">temp_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">tempfile</span><span class="o">.</span><span class="n">mkdtemp</span><span class="p">())</span>
+
+    <span class="c1"># Create test_event_grid.csv</span>
+    <span class="n">grid_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+        <span class="p">{</span>
+            <span class="s1">&#39;GP_file&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;GP_1.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;GP_2.csv&#39;</span><span class="p">],</span>
+            <span class="s1">&#39;Latitude&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">37.8720</span><span class="p">,</span> <span class="mf">37.8690</span><span class="p">],</span>
+            <span class="s1">&#39;Longitude&#39;</span><span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mf">122.2730</span><span class="p">,</span> <span class="o">-</span><span class="mf">122.2690</span><span class="p">],</span>
+        <span class="p">}</span>
+    <span class="p">)</span>
+    <span class="n">grid_data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">temp_dir</span> <span class="o">/</span> <span class="s1">&#39;test_event_grid.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">temp_dir</span>
+
+
+<div class="viewcode-block" id="setup_earthquake_test_data">
+<a class="viewcode-back" href="../../../api_reference/_autosummary/pelicun.tests.conftest.html#pelicun.tests.conftest.setup_earthquake_test_data">[docs]</a>
+<span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span><span class="p">(</span><span class="n">scope</span><span class="o">=</span><span class="s1">&#39;function&#39;</span><span class="p">)</span>  <span class="c1"># noqa: PT003</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">setup_earthquake_test_data</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">Generator</span><span class="p">[</span><span class="n">Path</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Create a temporary directory with mock data for earthquake tests.</span>
+
+<span class="sd">    This fixture:</span>
+<span class="sd">    1. Uses the common helper to create the temporary directory and common files</span>
+<span class="sd">    2. Adds earthquake-specific building inventory</span>
+<span class="sd">    3. Adds earthquake-specific configuration and data files</span>
+<span class="sd">    4. Yields the path to the temporary directory</span>
+<span class="sd">    5. Cleans up after the test by removing the directory and all its contents</span>
+
+<span class="sd">    Yields:</span>
+<span class="sd">        Generator yielding the Path object to the temporary directory</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Set up common test data</span>
+    <span class="n">temp_dir</span> <span class="o">=</span> <span class="n">_setup_common_test_data</span><span class="p">()</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Create earthquake-specific test_bldg_inventory.csv</span>
+        <span class="n">bldg_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+            <span class="p">{</span>
+                <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
+                <span class="s1">&#39;Latitude&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">37.8716</span><span class="p">,</span> <span class="mf">37.8700</span><span class="p">,</span> <span class="mf">37.8684</span><span class="p">,</span> <span class="mf">37.8668</span><span class="p">,</span> <span class="mf">37.8652</span><span class="p">],</span>
+                <span class="s1">&#39;Longitude&#39;</span><span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mf">122.2727</span><span class="p">,</span> <span class="o">-</span><span class="mf">122.2700</span><span class="p">,</span> <span class="o">-</span><span class="mf">122.2683</span><span class="p">,</span> <span class="o">-</span><span class="mf">122.2666</span><span class="p">,</span> <span class="o">-</span><span class="mf">122.2649</span><span class="p">],</span>
+                <span class="s1">&#39;HeightClass&#39;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="s1">&#39;Low-Rise&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;Low-Rise&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;Mid-Rise&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;Low-Rise&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;Low-Rise&#39;</span><span class="p">,</span>
+                <span class="p">],</span>
+                <span class="s1">&#39;DesignLevel&#39;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="s1">&#39;Pre-Code&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;Pre-Code&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;Pre-Code&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;High-Code&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;Pre-Code&#39;</span><span class="p">,</span>
+                <span class="p">],</span>
+                <span class="s1">&#39;PlanArea&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">7752</span><span class="p">,</span> <span class="mi">3600</span><span class="p">,</span> <span class="mi">28000</span><span class="p">,</span> <span class="mi">14709</span><span class="p">,</span> <span class="mi">3040</span><span class="p">],</span>
+                <span class="s1">&#39;NumberOfStories&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+                <span class="s1">&#39;YearBuilt&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1906</span><span class="p">,</span> <span class="mi">1931</span><span class="p">,</span> <span class="mi">1906</span><span class="p">,</span> <span class="mi">1983</span><span class="p">,</span> <span class="mi">1912</span><span class="p">],</span>
+                <span class="s1">&#39;ReplacementCost&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">1022488.8</span><span class="p">,</span> <span class="mf">6843570.3</span><span class="p">,</span> <span class="mi">3693200</span><span class="p">,</span> <span class="mi">1912170</span><span class="p">,</span> <span class="mi">418000</span><span class="p">],</span>
+                <span class="s1">&#39;StructureType&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="s1">&#39;W2&#39;</span><span class="p">,</span> <span class="s1">&#39;RM2&#39;</span><span class="p">,</span> <span class="s1">&#39;S1&#39;</span><span class="p">,</span> <span class="s1">&#39;S1&#39;</span><span class="p">],</span>
+                <span class="s1">&#39;OccupancyClass&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;COM4&#39;</span><span class="p">,</span> <span class="s1">&#39;RES3&#39;</span><span class="p">,</span> <span class="s1">&#39;COM4&#39;</span><span class="p">,</span> <span class="s1">&#39;RES3&#39;</span><span class="p">,</span> <span class="s1">&#39;RES3&#39;</span><span class="p">],</span>
+            <span class="p">}</span>
+        <span class="p">)</span>
+        <span class="n">bldg_data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">temp_dir</span> <span class="o">/</span> <span class="s1">&#39;test_bldg_inventory.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+        <span class="c1"># Create test_config.json for earthquake scenario</span>
+        <span class="n">config_data</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;Applications&#39;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">&#39;RegionalMapping&#39;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s1">&#39;Buildings&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;ApplicationData&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;neighbors&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;samples&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">}}</span>
+                <span class="p">},</span>
+                <span class="s1">&#39;DL&#39;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s1">&#39;Buildings&#39;</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="s1">&#39;ApplicationData&#39;</span><span class="p">:</span> <span class="p">{</span>
+                            <span class="s1">&#39;Realizations&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+                            <span class="s1">&#39;DL_Method&#39;</span><span class="p">:</span> <span class="s1">&#39;Hazus Earthquake - Buildings&#39;</span><span class="p">,</span>
+                        <span class="p">}</span>
+                    <span class="p">}</span>
+                <span class="p">},</span>
+                <span class="s1">&#39;Assets&#39;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s1">&#39;Buildings&#39;</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="s1">&#39;ApplicationData&#39;</span><span class="p">:</span> <span class="p">{</span>
+                            <span class="s1">&#39;assetSourceFile&#39;</span><span class="p">:</span> <span class="s1">&#39;test_bldg_inventory.csv&#39;</span><span class="p">,</span>
+                            <span class="s1">&#39;pathToSource&#39;</span><span class="p">:</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span>
+                        <span class="p">}</span>
+                    <span class="p">}</span>
+                <span class="p">},</span>
+            <span class="p">},</span>
+            <span class="s1">&#39;RegionalEvent&#39;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">&#39;eventFile&#39;</span><span class="p">:</span> <span class="s1">&#39;test_event_grid.csv&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;eventFilePath&#39;</span><span class="p">:</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;units&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;PGA&#39;</span><span class="p">:</span> <span class="s1">&#39;g&#39;</span><span class="p">},</span>
+            <span class="p">},</span>
+        <span class="p">}</span>
+
+        <span class="k">with</span> <span class="p">(</span><span class="n">temp_dir</span> <span class="o">/</span> <span class="s1">&#39;test_config.json&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">config_data</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+        <span class="c1"># Create GP_1.csv for earthquake scenario</span>
+        <span class="n">gp1_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+            <span class="p">{</span><span class="s1">&#39;PGA&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.51</span><span class="p">,</span> <span class="mf">0.49</span><span class="p">,</span> <span class="mf">0.52</span><span class="p">,</span> <span class="mf">0.48</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.51</span><span class="p">,</span> <span class="mf">0.49</span><span class="p">,</span> <span class="mf">0.52</span><span class="p">,</span> <span class="mf">0.48</span><span class="p">]}</span>
+        <span class="p">)</span>
+        <span class="n">gp1_data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">temp_dir</span> <span class="o">/</span> <span class="s1">&#39;GP_1.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+        <span class="c1"># Create GP_2.csv for earthquake scenario</span>
+        <span class="n">gp2_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+            <span class="p">{</span><span class="s1">&#39;PGA&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.61</span><span class="p">,</span> <span class="mf">0.59</span><span class="p">,</span> <span class="mf">0.62</span><span class="p">,</span> <span class="mf">0.58</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.61</span><span class="p">,</span> <span class="mf">0.59</span><span class="p">,</span> <span class="mf">0.62</span><span class="p">,</span> <span class="mf">0.58</span><span class="p">]}</span>
+        <span class="p">)</span>
+        <span class="n">gp2_data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">temp_dir</span> <span class="o">/</span> <span class="s1">&#39;GP_2.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+        <span class="k">yield</span> <span class="n">temp_dir</span>
+
+    <span class="k">finally</span><span class="p">:</span>
+        <span class="c1"># Clean up by removing the temporary directory and all its contents</span>
+        <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">temp_dir</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="setup_hurricane_test_data">
+<a class="viewcode-back" href="../../../api_reference/_autosummary/pelicun.tests.conftest.html#pelicun.tests.conftest.setup_hurricane_test_data">[docs]</a>
+<span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span><span class="p">(</span><span class="n">scope</span><span class="o">=</span><span class="s1">&#39;function&#39;</span><span class="p">)</span>  <span class="c1"># noqa: PT003</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">setup_hurricane_test_data</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">Generator</span><span class="p">[</span><span class="n">Path</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Create a temporary directory with mock data for hurricane tests.</span>
+
+<span class="sd">    This fixture:</span>
+<span class="sd">    1. Uses the common helper to create the temporary directory and common files</span>
+<span class="sd">    2. Adds hurricane-specific building inventory with features like RoofShape and Shutters</span>
+<span class="sd">    3. Adds hurricane-specific configuration and data files</span>
+<span class="sd">    4. Yields the path to the temporary directory</span>
+<span class="sd">    5. Cleans up after the test by removing the directory and all its contents</span>
+
+<span class="sd">    Yields:</span>
+<span class="sd">        Generator yielding the Path object to the temporary directory</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Set up common test data</span>
+    <span class="n">temp_dir</span> <span class="o">=</span> <span class="n">_setup_common_test_data</span><span class="p">()</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Create hurricane-specific test_bldg_inventory.csv</span>
+        <span class="n">hurricane_inventory_content</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;id,Latitude,Longitude,BuildingType,StructureType,NumberOfStories,Height,PlanArea,RoofShape,RoofQuality,RoofSystem,RoofCover,SecondaryWaterResistance,RoofDeckAttachment,RoofToWallConnection,NumberOfUnits,JoistSpacing,Garage,Shutters,WindowArea,TieDowns,MasonryReinforcing,WindDebrisClass,LandCover,OccupancyClass</span>
+<span class="s2">1,37.8716,-122.2727,Wood,Multi-Unit Housing,1,15,744.6,Hip,,Truss,,0,8d,Toe-nail,,,,0,,,,,Light Trees,RES3A</span>
+<span class="s2">2,37.8700,-122.2700,Wood,Single Family Housing,1,12.97,250.2,Gable,,Truss,,0,8d,Toe-nail,,,No,1,,,,,Suburban,RES1</span>
+<span class="s2">3,37.8684,-122.2683,Wood,Single Family Housing,1,16.28,170.4,Gable,,Truss,,0,8d,Toe-nail,,,No,0,,,,,Suburban,RES1</span>
+<span class="s2">4,37.8668,-122.2666,Wood,Single Family Housing,2,34.58,141.9,Gable,,Truss,,0,8d,Toe-nail,,,Weak,0,,,,,Suburban,RES1</span>
+<span class="s2">5,37.8652,-122.2649,Wood,Single Family Housing,1,14.22,269.8,Gable,,Truss,,0,8d,Toe-nail,,,Weak,0,,,,,Suburban,RES1&quot;&quot;&quot;</span>
+
+        <span class="k">with</span> <span class="p">(</span><span class="n">temp_dir</span> <span class="o">/</span> <span class="s1">&#39;test_bldg_inventory.csv&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">hurricane_inventory_content</span><span class="p">)</span>
+
+        <span class="c1"># Create test_config.json for hurricane scenario</span>
+        <span class="n">config_data</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;Applications&#39;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">&#39;RegionalMapping&#39;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s1">&#39;Buildings&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;ApplicationData&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;neighbors&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;samples&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">}}</span>
+                <span class="p">},</span>
+                <span class="s1">&#39;DL&#39;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s1">&#39;Buildings&#39;</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="s1">&#39;ApplicationData&#39;</span><span class="p">:</span> <span class="p">{</span>
+                            <span class="s1">&#39;Realizations&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+                            <span class="s1">&#39;DL_Method&#39;</span><span class="p">:</span> <span class="s1">&#39;Hazus Hurricane Wind&#39;</span><span class="p">,</span>
+                        <span class="p">}</span>
+                    <span class="p">}</span>
+                <span class="p">},</span>
+                <span class="s1">&#39;Assets&#39;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s1">&#39;Buildings&#39;</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="s1">&#39;ApplicationData&#39;</span><span class="p">:</span> <span class="p">{</span>
+                            <span class="s1">&#39;assetSourceFile&#39;</span><span class="p">:</span> <span class="s1">&#39;test_bldg_inventory.csv&#39;</span><span class="p">,</span>
+                            <span class="s1">&#39;pathToSource&#39;</span><span class="p">:</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span>
+                        <span class="p">}</span>
+                    <span class="p">}</span>
+                <span class="p">},</span>
+            <span class="p">},</span>
+            <span class="s1">&#39;RegionalEvent&#39;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">&#39;eventFile&#39;</span><span class="p">:</span> <span class="s1">&#39;test_event_grid.csv&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;eventFilePath&#39;</span><span class="p">:</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;units&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;PWS&#39;</span><span class="p">:</span> <span class="s1">&#39;mph&#39;</span><span class="p">},</span>
+            <span class="p">},</span>
+        <span class="p">}</span>
+
+        <span class="k">with</span> <span class="p">(</span><span class="n">temp_dir</span> <span class="o">/</span> <span class="s1">&#39;test_config.json&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">config_data</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+        <span class="c1"># Create GP_1.csv for hurricane scenario</span>
+        <span class="n">gp1_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+            <span class="p">{</span><span class="s1">&#39;PWS&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">102</span><span class="p">,</span> <span class="mi">98</span><span class="p">,</span> <span class="mi">104</span><span class="p">,</span> <span class="mi">96</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">102</span><span class="p">,</span> <span class="mi">98</span><span class="p">,</span> <span class="mi">104</span><span class="p">,</span> <span class="mi">96</span><span class="p">]}</span>
+        <span class="p">)</span>
+        <span class="n">gp1_data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">temp_dir</span> <span class="o">/</span> <span class="s1">&#39;GP_1.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+        <span class="c1"># Create GP_2.csv for hurricane scenario</span>
+        <span class="n">gp2_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+            <span class="p">{</span><span class="s1">&#39;PWS&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">110</span><span class="p">,</span> <span class="mi">112</span><span class="p">,</span> <span class="mi">108</span><span class="p">,</span> <span class="mi">114</span><span class="p">,</span> <span class="mi">106</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="mi">112</span><span class="p">,</span> <span class="mi">108</span><span class="p">,</span> <span class="mi">114</span><span class="p">,</span> <span class="mi">106</span><span class="p">]}</span>
+        <span class="p">)</span>
+        <span class="n">gp2_data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">temp_dir</span> <span class="o">/</span> <span class="s1">&#39;GP_2.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+        <span class="k">yield</span> <span class="n">temp_dir</span>
+
+    <span class="k">finally</span><span class="p">:</span>
+        <span class="c1"># Clean up by removing the temporary directory and all its contents</span>
+        <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">temp_dir</span><span class="p">)</span></div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Leland Stanford Junior University and The Regents of the University of California.</p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+    <!-- Theme Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-158130480-7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-158130480-7', {
+          'anonymize_ip': false,
+      });
+    </script> 
+
+</body>
+</html>

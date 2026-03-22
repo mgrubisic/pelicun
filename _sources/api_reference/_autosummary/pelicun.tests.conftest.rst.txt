@@ -1,0 +1,33 @@
+pelicun.tests.conftest
+======================
+
+.. automodule:: pelicun.tests.conftest
+   :members:
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      _setup_common_test_data
+      mock_dlml_data_check
+      setup_earthquake_test_data
+      setup_hurricane_test_data
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+
